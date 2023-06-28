@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario - Agregar curso</title>
+</head>
+<body>
+    <header class="cabecera">
+        <button onclick="location.href='http://127.0.0.1:8000'">Inicio</button>
+		<button onclick="location.href='http://127.0.0.1:8000/profes/'">Profesores</button>
+		<button onclick="location.href='http://127.0.0.1:8000/cursoFormulario/'">Cursos</button>
+		<button onclick="location.href='http://127.0.0.1:8000/estudiantes'">Estudiantes</button>
+        {% load static %}
+
+
+		<img id="top" class="logo" src="imagenes/mar.jpg" alt="logo sitio" width="1400" height="500">
+    </header>
+    <h1>Registro de profesores</h1>
+    <form action="/cursoFormulario/" method="POST">
+        {% csrf_token %}
+        <p>Nombre: <input type="text" name="nombre"></p>
+        <p>Apellido: <input type="text" name="apellido"></p>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
